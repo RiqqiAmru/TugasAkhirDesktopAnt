@@ -8,9 +8,6 @@ package main;
 import config.CRUD;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -197,7 +194,7 @@ public class PanelsiSaldo extends javax.swing.JPanel {
    }//GEN-LAST:event_btnResetActionPerformed
 
    private void btnIsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIsiActionPerformed
-      crud.insertData("INSERT INTO `trans_beli`( `nominal`, `id_akun`) VALUES ('" + nominal + "','" + idAkun + "')");
+      crud.insertData("INSERT INTO `trans_beli`( `nominal`, `id_akun`) VALUES ('" + nominal + "','" + idAkun + "')", "Berhasil Isi Saldo");
       refreshTableTransBeli();
       reset();
       crud.refreshSaldo(idAkun, lblSaldo);

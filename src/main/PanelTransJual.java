@@ -7,10 +7,7 @@ package main;
 import config.CRUD;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -272,12 +269,16 @@ public class PanelTransJual extends javax.swing.JPanel {
    }//GEN-LAST:event_bResetActionPerformed
 
    private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
-      String noPLN = cbPelanggan.getSelectedItem().toString();
+      try {
 
-      crud.insertData("INSERT INTO `trans_jual`( `no_pln`, `harga`, `bayar`, `id_akun`) VALUES ('" + noPLN + "','" + nominal + "','" + bayar + "','" + idAkun + "')");
-      reset();
-      refreshTableTransJual();
-      crud.refreshSaldo(idAkun, lblSaldo);
+         String noPLN = cbPelanggan.getSelectedItem().toString();
+         crud.insertData("INSERT INTO `trans_jual`( `no_pln`, `harga`, `bayar`, `id_akun`) VALUES ('" + noPLN + "','" + nominal + "','" + bayar + "','" + idAkun + "')", "Transaksi Berhasil");
+         reset();
+         refreshTableTransJual();
+         crud.refreshSaldo(idAkun, lblSaldo);
+      } catch (Exception e) {
+         Logger.getLogger(PanelTransJual.class.getName()).log(Level.SEVERE, null, e);
+      }
    }//GEN-LAST:event_bTambahActionPerformed
 
    // Variables declaration - do not modify//GEN-BEGIN:variables

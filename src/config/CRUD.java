@@ -7,9 +7,9 @@ package config;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
@@ -65,17 +65,18 @@ public class CRUD {
       return rs;
    }
 
-   public void insertData(String query) {
+   public void insertData(String query, String message) {
       try {
          st.executeUpdate(query);
+         JOptionPane.showMessageDialog(null, message);
       } catch (SQLException ex) {
          Logger.getLogger(CRUD.class.getName()).log(Level.SEVERE, null, ex);
          JOptionPane.showMessageDialog(null, ex.getMessage());
       }
    }
 
-   public void updateData(String query) {
-      insertData(query);
+   public void updateData(String query, String message) {
+      insertData(query, message);
    }
 
    public void refreshSaldo(int idAkun, javax.swing.JLabel l) {

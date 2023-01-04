@@ -48,6 +48,10 @@ public final class MainMenu extends javax.swing.JFrame {
       profil.setVisible(true);
       jTabbedPane1.addTab("PROFIL", profil);
 
+      PanelLaporan laporan = new PanelLaporan(idAkun, crud);
+      laporan.setVisible(true);
+      jTabbedPane1.addTab("LAPORAN", laporan);
+
    }
 
    public void refreshSaldo() {

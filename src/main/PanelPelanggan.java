@@ -232,11 +232,10 @@ public class PanelPelanggan extends javax.swing.JPanel {
 
    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
       if (btnSimpan.getText().equals("SIMPAN")) {
-         crud.insertData("INSERT INTO `pelanggan`(`no_pln`, `nama`) VALUES ('" + tNoPln.getText() + "','" + tNama.getText() + "')");
+         crud.insertData("INSERT INTO `pelanggan`(`no_pln`, `nama`) VALUES ('" + tNoPln.getText() + "','" + tNama.getText() + "')", "Data Pelanggan Berhasil Di simpan");
       } else {
-         crud.updateData("UPDATE `pelanggan` SET `nama`='" + tNama.getText() + "' WHERE no_pln = '" + tNoPln.getText() + "'");
+         crud.updateData("UPDATE `pelanggan` SET `nama`='" + tNama.getText() + "' WHERE no_pln = '" + tNoPln.getText() + "'", "Data Pelanggan Berhasil Diubah");
       }
-
       refreshTablePelanggan();
    }//GEN-LAST:event_btnSimpanActionPerformed
 

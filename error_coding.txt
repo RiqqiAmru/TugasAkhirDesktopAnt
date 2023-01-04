@@ -1,0 +1,17 @@
+* CURRENT WORKING
+- apa yang mau ditampilin di laporan
+-- dropdown akun untuk melihat pejualan dan log
+-- laporan penjualan hari ini (jam, pelanggan, nominal)
+-- banyak pelanggan, total nominal, margin, keuntungan
+-- log saldo per akun (tgl, transaksi, ket, saldo) order by tgl per akun ]
+
+
+
+
+KEKURANGAN UI/UX 
+- ketika login ingin pakai enter jangan tab
+- ketika edit profil masih memperbolehkan edit walau hanya tambah spasi 
+- bagaimana cara agar tabel auto fit per kata
+
+	DEADLINE BESOK KAMIS YA
+

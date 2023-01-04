@@ -7,7 +7,6 @@ package main;
 import config.CRUD;
 import java.sql.ResultSet;
 import java.util.Arrays;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -272,8 +271,7 @@ public class Register extends javax.swing.JFrame {
   }//GEN-LAST:event_btnResetActionPerformed
 
   private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-      crud.insertData("INSERT INTO `akun`(`nama`,`no_hp`,`alamat`,`password`)VALUES('" + tNama.getText() + "','" + tNoHP.getText() + "','" + tAlamat.getText() + "',md5('" + tPass.getText() + "'))");
-      JOptionPane.showMessageDialog(this, "BERHASIL REGISTER", "INFO", JOptionPane.INFORMATION_MESSAGE);
+      crud.insertData("INSERT INTO `akun`(`nama`,`no_hp`,`alamat`,`password`)VALUES('" + tNama.getText() + "','" + tNoHP.getText() + "','" + tAlamat.getText() + "',md5('" + tPass.getText() + "'))", "Berhasil Register");
       Login L = new Login();
       L.setVisible(true);
       this.dispose();

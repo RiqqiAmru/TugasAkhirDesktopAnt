@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -271,12 +270,12 @@ public class PanelProfil extends javax.swing.JPanel {
             successPass[0] = crud.validasiPasswordBedaDariPassLama(StringToMD5, passLama, tPass, "Password");
          }
          if (successPass[0]) {
-            successPass[0] = crud.validasiPasswordBeda(pass, pass1, tPass1, "Password 1");
+            successPass[1] = crud.validasiPasswordBeda(pass, pass1, tPass1, "Password 1");
          }
-         crud.validasiAND(success, btnGanti);
       } catch (NoSuchAlgorithmException ex) {
          Logger.getLogger(PanelProfil.class.getName()).log(Level.SEVERE, null, ex);
       }
+      crud.validasiAND(successPass, btnGanti);
    }//GEN-LAST:event_tPassFocusLost
 
    private void tPass1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tPass1FocusLost
@@ -284,9 +283,9 @@ public class PanelProfil extends javax.swing.JPanel {
       String pass = tPass.getText();
       String pass1 = tPass1.getText();
       if (successPass[1]) {
-         successPass[0] = crud.validasiPasswordBeda(pass, pass1, tPass1, "Konfirmasi Password 2");
+         successPass[1] = crud.validasiPasswordBeda(pass, pass1, tPass1, "Konfirmasi Password 2");
       }
-      crud.validasiAND(success, btnGanti);
+      crud.validasiAND(successPass, btnGanti);
    }//GEN-LAST:event_tPass1FocusLost
 
    private void chkSee1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSee1ActionPerformed
@@ -295,15 +294,13 @@ public class PanelProfil extends javax.swing.JPanel {
    }//GEN-LAST:event_chkSee1ActionPerformed
 
    private void btnGantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGantiActionPerformed
-      crud.updateData("UPDATE `akun` SET `password`= md5('" + tPass.getText() + "') WHERE id_akun = '" + idAkun + "'");
-      JOptionPane.showMessageDialog(null, "Password berhasil diubah");
+      crud.updateData("UPDATE `akun` SET `password`= md5('" + tPass.getText() + "') WHERE id_akun = '" + idAkun + "'", "Password Berhasil Diubah");
       isiForm();
       reset();
    }//GEN-LAST:event_btnGantiActionPerformed
 
    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-      crud.updateData("UPDATE `akun` SET `nama`='" + tNama.getText() + "',`no_hp`='" + tNoHp.getText() + "',`alamat`='" + tAlamat.getText() + "'WHERE id_akun = '" + idAkun + "'");
-      JOptionPane.showMessageDialog(null, "Data Akun Berhasil Di edit");
+      crud.updateData("UPDATE `akun` SET `nama`='" + tNama.getText() + "',`no_hp`='" + tNoHp.getText() + "',`alamat`='" + tAlamat.getText() + "'WHERE id_akun = '" + idAkun + "'", "Data Akun Berhasil Di edit");
       isiForm();
       reset();
    }//GEN-LAST:event_btnEditActionPerformed

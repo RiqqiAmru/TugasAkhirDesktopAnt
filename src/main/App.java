@@ -10,9 +10,8 @@ package main;
  */
 public class App {
 
-    public static void main(String[] args) {
-        Login login = new Login();
-        login.setVisible(true);
-
-    }
+   public static void main(String[] args) {
+      Login login = new Login();
+      login.setVisible(true);
+   }
 }
