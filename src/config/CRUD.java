@@ -16,6 +16,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -145,7 +146,7 @@ public class CRUD {
 
    public String dateToTgl(String tgl) {
       try {
-         var date = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", new Locale("id", "ID")).parse(tgl);
+         Date date = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", new Locale("id", "ID")).parse(tgl);
          String tglOke = new SimpleDateFormat("EE, hh:mm:ss z dd/MMM/yy", new Locale("id", "ID")).format(date);
          return tglOke;
       } catch (ParseException ex) {
@@ -181,7 +182,7 @@ public class CRUD {
    }
 
    public boolean ValidasiTextHarusDiIsi(javax.swing.JTextField j, String text, javax.swing.JButton b) {
-      if (j.getText().isBlank()) {
+      if (j.getText().isEmpty()) {
          textError(j, text + " Harus Di Isi");
          return false;
       } else {
