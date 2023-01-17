@@ -45,7 +45,7 @@ public class PanelsiSaldo extends javax.swing.JPanel {
          dt.getDataVector().clear();
          dt.fireTableDataChanged();
          while (transBeli.next()) {
-            String tglOke = crud.dateToTgl(transBeli.getString("tgl"));
+            String tglOke = crud.dateToTgl(transBeli.getString("tgl"), "default");
             String nominal = crud.integerToRupiah(Integer.parseInt(transBeli.getString("nominal")));
             String admin = transBeli.getString("admin");
             dt.addRow(new Object[]{no++, tglOke, nominal, admin});

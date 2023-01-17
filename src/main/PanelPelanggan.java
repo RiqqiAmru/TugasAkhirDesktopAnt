@@ -61,8 +61,12 @@ public class PanelPelanggan extends javax.swing.JPanel {
       Arrays.fill(pelangganSuccess, false);
       btnSimpan.setEnabled(false);
       btnBatal.setVisible(false);
+      if (btnSimpan.getText() == "EDIT") {
+         tNoPln.setEditable(true);
+      }
       btnSimpan.setText("SIMPAN");
       tabelPelanggan.clearSelection();
+
    }
 
    /**
@@ -235,8 +239,10 @@ public class PanelPelanggan extends javax.swing.JPanel {
          crud.insertData("INSERT INTO `pelanggan`(`no_pln`, `nama`) VALUES ('" + tNoPln.getText() + "','" + tNama.getText() + "')", "Data Pelanggan Berhasil Di simpan");
       } else {
          crud.updateData("UPDATE `pelanggan` SET `nama`='" + tNama.getText() + "' WHERE no_pln = '" + tNoPln.getText() + "'", "Data Pelanggan Berhasil Diubah");
+//         tNoPln.setEditable(true);
       }
       refreshTablePelanggan();
+
    }//GEN-LAST:event_btnSimpanActionPerformed
 
    private void tabelPelangganMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelPelangganMouseClicked
@@ -253,7 +259,6 @@ public class PanelPelanggan extends javax.swing.JPanel {
 
    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
       reset();
-      tNoPln.setEditable(true);
    }//GEN-LAST:event_btnBatalActionPerformed
 
    // Variables declaration - do not modify//GEN-BEGIN:variables

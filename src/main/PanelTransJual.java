@@ -49,7 +49,7 @@ public class PanelTransJual extends javax.swing.JPanel {
          dt.getDataVector().clear();
          dt.fireTableDataChanged();
          while (transJual.next()) {
-            String tglOke = crud.dateToTgl(transJual.getString("tgl"));
+            String tglOke = crud.dateToTgl(transJual.getString("tgl"), "default");
             String noPln = transJual.getString("no_pln");
             String pelanggan = transJual.getString("pelanggan");
             String nominal = crud.integerToRupiah(Integer.parseInt(transJual.getString("harga")));
@@ -292,11 +292,11 @@ public class PanelTransJual extends javax.swing.JPanel {
    }//GEN-LAST:event_bTambahActionPerformed
 
     private void cbPelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPelangganActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_cbPelangganActionPerformed
 
     private void cbNominalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNominalActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_cbNominalActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

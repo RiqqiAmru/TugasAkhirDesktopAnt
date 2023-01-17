@@ -144,10 +144,24 @@ public class CRUD {
       }
    }
 
-   public String dateToTgl(String tgl) {
+   public String dateToTgl(String tgl, String format) {
+      String formatTanggal = "";
+      switch (format) {
+         case "harian":
+            formatTanggal = "hh:mm:ss z ";
+            break;
+         case "mingguan":
+            formatTanggal = "EEEE, dd MMMM";
+            break;
+         case "bulanan":
+            formatTanggal = "dd MMMM";
+            break;
+         default:
+            formatTanggal = "EE, hh:mm:ss z dd/MMM/yy";
+      }
       try {
          Date date = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", new Locale("id", "ID")).parse(tgl);
-         String tglOke = new SimpleDateFormat("EE, hh:mm:ss z dd/MMM/yy", new Locale("id", "ID")).format(date);
+         String tglOke = new SimpleDateFormat(formatTanggal, new Locale("id", "ID")).format(date);
          return tglOke;
       } catch (ParseException ex) {
          Logger.getLogger(CRUD.class.getName()).log(Level.SEVERE, null, ex);
