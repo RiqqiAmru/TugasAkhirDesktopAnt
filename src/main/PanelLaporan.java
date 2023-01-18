@@ -285,6 +285,7 @@ public class PanelLaporan extends javax.swing.JPanel {
       refreshTablePenjualan();
       refreshTotal();
       refreshTableLog();
+      insertListAkun();
    }//GEN-LAST:event_formComponentShown
 
    private void cbAkunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAkunActionPerformed

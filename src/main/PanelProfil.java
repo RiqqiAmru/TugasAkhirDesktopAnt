@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 
 /**
  *
@@ -27,13 +28,14 @@ public class PanelProfil extends javax.swing.JPanel {
    String passLama;
    boolean[] success = new boolean[3];
    boolean[] successPass = new boolean[2];
-
+   MainMenu mainMenu;
    /**
     * Creates new form profilku
     */
-   public PanelProfil(int idAkun, CRUD crud) {
+   public PanelProfil(int idAkun, CRUD crud, MainMenu admin) {
       this.idAkun = idAkun;
       this.crud = crud;
+      this.mainMenu = admin;
       initComponents();
       isiForm();
    }
@@ -233,6 +235,7 @@ public class PanelProfil extends javax.swing.JPanel {
    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
       crud.refreshSaldo(idAkun, lblSaldo);
       isiForm();
+      reset();
    }//GEN-LAST:event_formComponentShown
 
    private void tNamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tNamaFocusLost
@@ -302,6 +305,8 @@ public class PanelProfil extends javax.swing.JPanel {
    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
       crud.updateData("UPDATE `akun` SET `nama`='" + tNama.getText() + "',`no_hp`='" + tNoHp.getText() + "',`alamat`='" + tAlamat.getText() + "'WHERE id_akun = '" + idAkun + "'", "Data Akun Berhasil Di edit");
       isiForm();
+      String namaBesar = tNama.getText().toUpperCase();
+      mainMenu.getLblAdmin().setText(namaBesar);
       reset();
    }//GEN-LAST:event_btnEditActionPerformed
 

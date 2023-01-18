@@ -20,7 +20,6 @@ IDE GG
 
 KEKURANGAN
 2) ketika sudah edit profil, nama profil pada logout belum berubah, jadi harus log out dulu lalu login baru berubah
-3) ketika isi tabel saldo kosong semua, bisa isi saldo, terus error, tp iki tinggal tambahi isiSaldo. setEnable (false) ning shown panelisisaldo
 4) Belum bisa add pil. saldo & pulsa listrik & edit aktif nonaktif
 	
 

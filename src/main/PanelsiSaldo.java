@@ -32,6 +32,7 @@ public class PanelsiSaldo extends javax.swing.JPanel {
       this.idAkun = idAkun;
       this.crud = crud;
       initComponents();
+      btnIsi.setEnabled(false);
       crud.refreshSaldo(idAkun, lblSaldo);
       refreshTableTransBeli();
    }
@@ -175,6 +176,7 @@ public class PanelsiSaldo extends javax.swing.JPanel {
       refreshTableTransBeli();
       crud.refreshSaldo(idAkun, lblSaldo);
       insertListNominal();
+      reset();
    }//GEN-LAST:event_formComponentShown
 
    private void cbNominalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNominalActionPerformed
